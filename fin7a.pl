@@ -13,6 +13,6 @@ mini_Income(Y, B), not(X > B).
 income(inadequate) :- earnings(_, unsteady).
 mini_Savings(A, B) :- B = 5000 * A.
 mini_Income(A, B) :- B = 15000 + (4000 * A).
-amount_Saved(16000).
-earnings(25000, steady).
-dependents_Value(3).
+amount_Saved(20000).
+earnings(30000, steady).
+dependents_Value(2).
