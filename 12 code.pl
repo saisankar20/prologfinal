@@ -14,9 +14,13 @@ goal_state([
 
 % Move a block from one location to another
 move([on(Block, From) | Rest], [on(Block, To), clear(From) | Rest], move(Block, From, To)) :-
-    clear(Block),
-    clear(To),
+    clear(Block, [on(Block, From) | Rest]),
+    clear(To, [on(Block, From) | Rest]),
     To \= Block.
+
+% Check if a block is clear (nothing on top of it)
+clear(Block, State) :-
+    \+ member(on(_, Block), State).
 
 % Base case: plan succeeds if current state matches the goal state
 plan(State, State, []).
