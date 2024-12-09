@@ -24,8 +24,8 @@ location(sam, museum) :-
     not(warm(saturday)).
 
 % Initialize predicates
-spaniel(lucy).
-warm(friday).
+spaniel(spot).
+warm(today).
 
 % Query
 :- location(fred,X).
